@@ -1,5 +1,103 @@
+:root {
+  --font-base: 'Lato', sans-serif;
+  --font-display: 'Poiret One', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  color: #333;
+  font-family: var(--font-base);
+  font-weight: normal;
+
+  /* Pattern bg from css-pattern.com */
+  --s: 50px; /* control the size */
+  --c: #f0f0f0;
+  --_g: radial-gradient(#f5fbff 49%, #0000 50%);
+  background: var(--_g) calc(var(--s) / -2) calc(var(--s) / 2), repeating-conic-gradient(from 45deg, var(--c) 0 25%, #0000 0 50%) calc(var(--s) / 2) calc(var(--s) / 2), var(--_g), var(--_g) var(--s) var(--s) var(--c);
+  background-size: calc(2 * var(--s)) calc(2 * var(--s));
+}
+
+button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+label,
+input {
+  font-family: inherit;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+main {
+  width: 95%;
+  max-width: 800px;
+  background: #fcfcfc;
+}
+
+main > * {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 1px solid #a5a4a4;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+form input {
+  width: 300px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+form button {
+  padding: 0.5rem 1rem;
+  background: #474747;
+  color: #fff;
+}
+
+.array-box {
+  text-align: center;
+}
+.array-box h2 {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+}
+.array-box p {
+  font-size: 2rem;
+}
+
+.btn-long {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: #474747;
+  color: #fff;
+}
+
+form button:hover,
+.btn-long:hover {
+  box-shadow: inset 0 0 0 1500px rgba(255, 255, 255, 0.2);
 }

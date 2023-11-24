@@ -50,27 +50,37 @@ function App() {
     <>
       <h1>Simple Sorting</h1>
 
-      <form>
-        <label htmlFor="arrayElement">Type number</label>
-        <input type="number" id="arrayItem" value={itemInput} onChange={changeValue} onSubmit={addToArr} />
-        <button type="submit" onClick={addToArr}>
-          Add to array
+      <main>
+        <form>
+          <label htmlFor="arrayElement">Type a number:</label>
+          <input type="number" id="arrayItem" value={itemInput} onChange={changeValue} onSubmit={addToArr} />
+          <button type="submit" onClick={addToArr}>
+            Add to array
+          </button>
+        </form>
+
+        <div className="array-box">
+          <h2>Unsorted Array</h2>
+          <p>[{unsortedArr.join(', ')}]</p>
+        </div>
+
+        <button className="btn-long" onClick={sortArr}>
+          SORT!
         </button>
-      </form>
 
-      <div className="unsorted-array">
-        <h2>Unsorted Array</h2>
-        <p>[{unsortedArr.join(', ')}]</p>
-      </div>
+        <div className="array-box">
+          <h2>Sorted Array</h2>
+          <p>[{sortedArr.join(', ')}]</p>
+        </div>
 
-      <button onClick={sortArr}>SORT!</button>
-
-      <div className="sorted-array">
-        <h2>Sorted Array</h2>
-        <p>[{sortedArr.join(', ')}]</p>
-      </div>
-
-      {sortedArr.length > 0 ? <button onClick={clearHandler}>CLEAR</button> : ''}
+        {sortedArr.length > 0 ? (
+          <button className="btn-long" onClick={clearHandler}>
+            CLEAR
+          </button>
+        ) : (
+          ''
+        )}
+      </main>
     </>
   );
 }
