@@ -101,3 +101,7 @@ form button:hover,
 .btn-long:hover {
   box-shadow: inset 0 0 0 1500px rgba(255, 255, 255, 0.2);
 }
+
+footer {
+  margin-top: 2rem;
+}
